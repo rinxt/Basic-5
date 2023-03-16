@@ -6,32 +6,12 @@ protected:
     bool checked = false;
     int sides_count = 0;
 
-    int a_ = 0;
-    int b_ = 0;
-    int c_ = 0;
-    int d_ = 0;
-
-    int A_ = 0;
-    int B_ = 0;
-    int C_ = 0;
-    int D_ = 0;
-
     virtual bool check() {
         if (sides_count != 0) return false;
     }
 
 public:
     std::string get_name() { return name_; }
-
-    int get_a() { return a_; }
-    int get_b() { return b_; }
-    int get_c() { return c_; }
-    int get_d() { return d_; }
-
-    int get_A() { return A_; }
-    int get_B() { return B_; }
-    int get_C() { return C_; }
-    int get_D() { return D_; }
 
     virtual void print_info() {
         std::cout << "\n" << name_ << ":\n";
@@ -44,6 +24,13 @@ public:
 
 class Triangle : public Figure {
 protected:
+    int a_ = 0;
+    int b_ = 0;
+    int c_ = 0;
+    int A_ = 0;
+    int B_ = 0;
+    int C_ = 0;
+
     bool check() override {
         if ((A_ + B_ + C_) == 180) return true;
         else return false;
@@ -61,6 +48,13 @@ public:
         sides_count = 3;
         checked = check();
     }
+
+    int get_a() { return a_; }
+    int get_b() { return b_; }
+    int get_c() { return c_; }
+    int get_A() { return A_; }
+    int get_B() { return B_; }
+    int get_C() { return C_; }
 
     void print_info() override 
     {
@@ -116,6 +110,15 @@ public:
 
 class Quadrilateral : public Figure {
 protected:
+    int a_ = 0;
+    int b_ = 0;
+    int c_ = 0;
+    int d_ = 0;
+    int A_ = 0;
+    int B_ = 0;
+    int C_ = 0;
+    int D_ = 0;
+
     bool check() override {
         if ((A_ + B_ + C_ + D_) == 90) return true;
         else return false;
@@ -156,6 +159,15 @@ public:
         C_ = C;
         D_ = D;
     }
+
+    int get_a() { return a_; }
+    int get_b() { return b_; }
+    int get_c() { return c_; }
+    int get_d() { return d_; }
+    int get_A() { return A_; }
+    int get_B() { return B_; }
+    int get_C() { return C_; }
+    int get_D() { return D_; }
 
     void print_info() override
     {
